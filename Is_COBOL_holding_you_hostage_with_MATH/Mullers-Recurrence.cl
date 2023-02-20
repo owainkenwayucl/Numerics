@@ -33,7 +33,7 @@
 	(format  t"---------------------------------------------------~%")
 	(let ((frs (Fraction n))
 	      (fls (Floating n)))
-		(loop for i from 1 to n do
+		(loop for i from -1 to n do
 			(format t " ~4a | ~20f | ~20f~%" i (pop fls) (pop frs))
 		)
 	)
