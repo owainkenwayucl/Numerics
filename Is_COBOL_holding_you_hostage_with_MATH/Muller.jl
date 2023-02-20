@@ -10,7 +10,7 @@ function Do_Recurrence(n, x)
 end
 
 function Fractions(n)
-	x = [4//1, 17//4]
+	x = [big(4)//big(1), big(17)//big(4)]
 	return Do_Recurrence(n, x) * 1.0
 end
 
