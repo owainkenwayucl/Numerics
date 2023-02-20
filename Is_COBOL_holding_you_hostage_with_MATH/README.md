@@ -75,3 +75,53 @@ and then run the resulting binary:
 20|099.999996796239314
 ```
 
+## Common Lisp version:
+
+This version demonstrates the advantage of storing numbers internally as fractions as Common Lisp does i.e. if you do:
+
+```lisp
+(/ 3 4)
+```
+
+you get `(3/4)`.
+
+This implementation does all the maths as fractions and then converts to floats (by multiplying by *1.0*) and compares it to the bare floating point version. As can be seen, this version doesn't blow up even for very large *n*.
+
+To run it, start your Common Lisp interpreter and:
+
+```lisp
+(load "Mullers-Recurrence.cl")
+ i    | Floating Point       | Fraction (->fp out) 
+---------------------------------------------------
+ 1    |                  4.0 |                  4.0
+ 2    |                 4.25 |                 4.25
+ 3    |    4.470588235294116 |    4.470588235294118
+ 4    |   4.6447368421052175 |    4.644736842105263
+ 5    |    4.770538243625083 |    4.770538243626063
+ 6    |    4.855700712568563 |    4.855700712589074
+ 7    |     4.91084749866063 |    4.910847499082793
+ 8    |    4.945537395530508 |    4.945537404123916
+ 9    |    4.966962408040999 |    4.966962581762701
+ 10   |    4.980042204293014 |    4.980045701355631
+ 11   |    4.987909232795786 |    4.987979448478392
+ 12   |    4.991362641314552 |    4.992770288062068
+ 13   |    4.967455095552268 |    4.995655891506634
+ 14   |     4.42969049830883 |    4.997391268381344
+ 15   |   -7.817236578459315 |    4.998433943944817
+ 16   |   168.93916767106458 |    4.999060071970894
+ 17   |   102.03996315205927 |    4.999435937146839
+ 18   |    100.0999475162497 |    4.999661524103767
+ 19   |   100.00499204097244 |   4.9997969007134175
+ 20   |    100.0002495792373 |    4.999878135477931
+T
+```
+
+This runs it initially for *n = 20* but you can re-run it for arbitrary *n* by running:
+
+```lisp
+(Compare n)
+```
+
+
+
+
