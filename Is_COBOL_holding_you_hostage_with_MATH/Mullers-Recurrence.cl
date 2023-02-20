@@ -30,7 +30,7 @@
 
 (defun Compare (n) 
 	(format t " i    | Floating Point       | Fraction (->fp out) ~%")
-	(format  t"---------------------------------------------------~%")
+	(format t "---------------------------------------------------~%")
 	(let ((frs (Fraction n))
 	      (fls (Floating n)))
 		(loop for i from -1 to n do
